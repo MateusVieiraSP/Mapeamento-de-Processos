@@ -1,0 +1,567 @@
+/* Reset básico */
+body, h1, h2, p, div, label, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos Globais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fafb; /* Cor de fundo suave */
+    color: #333;    
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #344955; /* Cor mais sofisticada */
+    padding: 15px 20px;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo da Navbar */
+.logo-container img {
+    max-height: 60px;
+    margin-right: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Botões da Navbar */
+.navbar-links .link-button {
+    background-color: #4A90E2;
+    color: white;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    display: inline-block;
+    margin: 0 8px;
+}
+
+.navbar-links .link-button:hover {
+    background-color: #357ABD;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Container do Mapeamento */
+.mapeamento-container {
+    max-width: 97%;
+    margin: 50px auto;
+    padding: 25px 30px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Títulos */
+h1 {
+    font-size: 26px;
+    color: #344955;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2, h3 {
+    text-align: center;
+    color: #344955;
+    margin-bottom: 20px;
+}
+
+p {
+    color: red;
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+/* Inputs e Seletores */
+input[type="text"],
+select {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: #4A90E2;
+    outline: none;
+}
+
+/* Botões */
+.btn {
+    background-color: #4A90E2;
+    color: white;
+    padding: 10px 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #357ABD;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estrutura de Etapas e Subetapas com Fundo Colorido */
+#stepsTree {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.step-item {
+    background-color: #e8f1fc; /* Fundo suave azul-claro */
+    border: 1px solid #b0c4de; /* Borda sutil azul */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra leve para destaque */
+}
+
+.step-item h4 {
+    color: #2d3e50;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.substep-item {
+    background-color: #dfeffd; /* Tom ainda mais claro para subetapas */
+    border: 1px solid #c6dbee; /* Borda azul clara para subetapas */
+    padding: 12px;
+    border-radius: 6px;
+    margin: 10px 0 10px 20px; /* Espaçamento interno e indentação */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.substep-item h5 {
+    color: #4a5361;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+/* Separação entre Perguntas e Descrições */
+.questions-group {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f7fafc; /* Fundo neutro claro */
+    border-left: 4px solid #4a90e2; /* Destaque à esquerda com azul */
+}
+
+.questions-group label {
+    font-weight: bold;
+    color: #2d3e50;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Estilo para as opções de checkbox */
+.questions-group .checkbox-label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #f1f7ff; /* Fundo leve */
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 8px; /* Espaçamento entre as opções */
+    border: 1px solid #d1e3f8; /* Borda sutil */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.questions-group .checkbox-label:hover {
+    background-color: #e0edff; /* Cor de fundo mais clara ao passar o mouse */
+    border-color: #b0c9f0; /* Realce sutil na borda ao passar o mouse */
+}
+
+.questions-group .checkbox-label input[type="checkbox"] {
+    margin-right: 10px; /* Espaço entre checkbox e texto */
+    transform: scale(1.2); /* Aumenta levemente o tamanho do checkbox */
+}
+
+.questions-group .checkbox-label span {
+    font-size: 14px;
+    color: #333; /* Cor do texto */
+    line-height: 1.5;
+}
+
+/* Container Principal */
+.questions-group {
+    padding: 15px;
+    background-color: #f7fafc;
+    border-left: 4px solid #4a90e2; /* Destaque azul à esquerda */
+    border-radius: 6px;
+}
+
+.description {
+    color: #555; /* Cinza mais escuro para contraste */
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Ajuste de Inputs Dentro das Estruturas */
+.step-item input[type="text"],
+.substep-item input[type="text"],
+.step-item select,
+.substep-item select {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: #ffffff;
+    margin-top: 5px;
+    transition: border-color 0.3s;
+}
+
+.step-item input[type="text"]:focus,
+.substep-item input[type="text"]:focus,
+.step-item select:focus,
+.substep-item select:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+/* Botão Expandir/Colapsar */
+.step-item .toggle-button,
+.substep-item .toggle-button {
+    background: none;
+    border: none;
+    color: #4a90e2;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.step-item .toggle-button:hover,
+.substep-item .toggle-button:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    background-color: #344955;
+    color: white;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.footer-info, .footer-contacts {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo {
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    max-width: 150px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-logo img:hover {
+    transform: scale(1.05);
+}
+
+.footer-bottom {
+    border-top: 1px solid #4a4a4a;
+    padding-top: 10px;
+    font-size: 12px;
+    color: #aaaaaa;
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #dddddd;
+}
+
+/* Barra Flutuante */
+.floating-bar {
+    position: fixed;
+    top: 12.4%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.btn-floating {
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-floating:hover {
+    background-color: #357abd;
+    transform: scale(1.05);
+}
+
+.highlight {
+    background-color: #cddff3; /* Azul claro suave */
+    transition: background-color 0.5s ease-out;
+}
+
+.question-description {
+    display: block;
+    text-align: justify;
+    color: #6c757d; /* Cinza claro para um visual mais sutil */
+    font-size: 0.875em; /* Tamanho ligeiramente menor */
+    margin-top: 0.25em; /* Espaço entre o rótulo e a descrição */
+    margin-bottom: 0.25em; /* Espaço entre o rótulo e a descrição */
+}
+
+.select-with-quantity {
+    margin-top: 10px;
+}
+
+.option-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.option-wrapper label {
+    margin-right: 10px;
+}
+
+/* Container para múltiplas seleções */
+.multi-select-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    background-color: #f9fafb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Botões para opções */
+.option-button {
+    background-color: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    padding: 10px 18px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.option-button:hover {
+    background-color: #e2e8f0;
+    border-color: #2563eb;
+    color: #2563eb;
+    box-shadow: 0 3px 6px rgba(37, 99, 235, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Container da tag selecionada com quantidade */
+.tag-container {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    background-color: #d4e4fa; /* Azul mais suave e relaxante */
+    border: 1px solid #9bbbe9; /* Bordas em tom complementar suave */
+    border-radius: 20px; /* Bordas arredondadas */
+    margin: 5px 5px 5px 0; /* Ajuste de espaçamento */
+    color: #1f2937; /* Cor de texto mais escura para contraste */
+    box-shadow: 0 1px 3px rgba(155, 187, 233, 0.2); /* Sombra sutil */
+    font-size: 14px;
+}
+
+/* Rótulo da tag selecionada */
+.tag-label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Input para quantidade */
+.quantity-input {
+    width: 40px;
+    padding: 2px 4px;
+    margin-left: 8px;
+    margin-right: 8px;
+    border: 1px solid #9bbbe9; /* Cor de borda suave */
+    border-radius: 4px;
+    font-size: 12px;
+    color: #1f2937;
+    background-color: #f0f4fc; /* Cor de fundo sutil */
+    text-align: center;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.quantity-input:focus {
+    border-color: #7996d3; /* Tom de azul suave ao focar */
+}
+
+/* Botão para remover a tag */
+.remove-tag-button {
+    background-color: transparent;
+    border: none;
+    color: red; /* Cor de botão harmoniosa */
+    padding: 0 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.remove-tag-button:hover {
+    color: #ff0000;
+    transform: scale(2.00);
+}
+
+/* Rótulo da tag */
+.tag-label {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Question Group */
+.questions-group {
+    margin-bottom: 25px;
+    padding: 10px;
+    border-left: 4px solid #3b82f6;
+    background-color: #f1f5f9;
+    border-radius: 8px;
+}
+
+/* Label da questão */
+.question-label {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 8px;
+    display: block;
+    color: #1f2937;
+}
+
+/* Descrição da questão */
+.question-description {
+    font-size: 0.9em;
+    color: #6b7280;
+    display: block;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.floating-bar {
+    position: fixed;
+    top: 20%; /* Ajuste conforme necessário */
+    right: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px; /* Bordas mais arredondadas */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Sombra mais suave */
+    z-index: 1000;
+    width: 300px;
+    transition: box-shadow 0.3s ease; /* Transição para efeito de hover */
+}
+
+.floating-bar:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra mais intensa ao passar o mouse */
+}
+
+#scrollToTopButton {
+    width: 100%;
+    background-color: #4A90E2;
+    color: white;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px; /* Cantos arredondados no botão */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#scrollToTopButton:hover {
+    background-color: #357ABD;
+    transform: scale(1.05); /* Leve efeito de zoom ao passar o mouse */
+}
+
+#scrollToStepSelector {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    background-color: #f1f5f9;
+    border: 1px solid #ced4da;
+    border-radius: 10px; /* Bordas arredondadas no seletor */
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.3s, box-shadow 0.3s ease;
+}
+
+#scrollToStepSelector:hover,
+#scrollToStepSelector:focus {
+    border-color: #4A90E2;
+    box-shadow: 0 0 6px rgba(74, 144, 226, 0.4); /* Sombra leve ao focar */
+    outline: none;
+}
+
+/* Animação de Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapeamento de Processos</title>
+    <link rel="stylesheet" href="../css/mapeamento.css">
+    <link rel="icon" href="../assets/Prefeitura_de_Sao_Paulo-logo-B6023596B5-seeklogo.com.png">
+    <!-- Link para o CSS do Select2 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <!-- Script do Select2 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+</head>
+<body>
+    <!-- Navbar (Barra Superior) -->
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="https://www.prefeitura.sp.gov.br/cidade/secretarias/controladoria_geral/a_cgm/index.php?p=332358" target="_blank">
+                <img src="../assets/CONTROLADORIA_GERAL_DO_MUNICÍPIO_HORIZONTAL_FUNDO_ESCURO.png" alt="Logo da Controladoria Geral do Município">
+            </a>
+        </div>
+        <nav class="navbar-links">
+            <a href="https://www.prefeitura.sp.gov.br/cidade/secretarias/upload/controladoria_geral/GuiaOrientativosobreaPrivacidadeeaProtecaodeDadosPessoaisparaaAdministracaoPublicadoMunicipiodeSaoPaulo_publicacao_26_01_2023.pdf" target="_blank" class="link-button">Guia sobre Privacidade e Proteção de Dados Pessoais</a>
+            <a href="https://www.prefeitura.sp.gov.br/cidade/secretarias/upload/controladoria_geral/GuiaOrientativosobreaInstrucaoNormativaCGM-SPn%C2%BA01-2022paraaAdministracaoPublicadoMunicipiodeSaoPaulo_publicacao_26_01_2023.pdf" target="_blank" class="link-button">Guia sobre Instrução Normativa CGM-SP nº01-2022</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <div class="mapeamento-container">
+        <form id="mapeamentoForm">
+            <h2>Gestão de Etapas e Subetapas</h2>
+
+            <!-- Instrução Geral -->
+            <p>Utilize este formulário para estruturar as etapas e subetapas do seu processo. Siga as instruções abaixo para criar novas etapas e subetapas, além de atrelar etapas já existentes conforme necessário.</p>
+
+            <!-- Campo de Criação de Etapa -->
+            <div>
+                <p>Para criar uma nova etapa, insira o nome desejado no campo abaixo e clique em "Criar Etapa". As etapas são o nível mais alto da estrutura hierárquica do processo.</p>
+                <input type="text" id="stepName" placeholder="Nome da Etapa">
+                <button id="createStepBtn" class="btn">Criar Etapa</button>
+            </div>
+
+            <!-- Campo de Criação de Subetapa -->
+            <div>
+                <p>Para adicionar uma subetapa, insira o nome no campo "Nome da Subetapa" e selecione a etapa à qual ela pertence. Em seguida, clique em "Criar Subetapa". As subetapas detalham processos específicos dentro de cada etapa.</p>
+                <input type="text" id="substepName" placeholder="Nome da Subetapa">
+                <select id="stepSelector">
+                    <option value="">Selecione uma Etapa para Atrelar</option>
+                </select>
+                <button id="createSubstepBtn" class="btn">Criar Subetapa</button>
+            </div>
+
+            <!-- Campo de Criação de Etapa Atrelada -->
+            <div>
+                <p>Para atrelar uma nova etapa ou subetapa a uma já existente, insira o nome no campo abaixo e selecione a etapa/subetapa onde ela será inserida. Depois, clique em "Criar Etapa Atrelada". Isso ajuda a relacionar diferentes partes do processo.</p>
+                <label for="linkToSelector">Atrelar a uma Etapa/Subetapa existente:</label>
+                <select id="linkToSelector">
+                    <option value="">Não Atrelar</option>
+                </select>
+                <button id="createLinkedStepBtn" class="btn">Criar Etapa Atrelada</button>
+            </div>
+
+            <!-- Botão de Salvar e Seguir -->
+            <div>
+                <p>Ao concluir a organização das etapas e subetapas, clique no botão abaixo para salvar todas as informações e seguir para a próxima página, onde você poderá baixar o arquivo Excel com os dados preenchidos.</p>
+                <button id="saveAndNextButton" class="btn">Salvar Respostas e Seguir para Download</button>
+            </div>
+
+            <!-- Estrutura das Etapas e Subetapas -->
+            <h3>Estrutura de Etapas e Subetapas</h3>
+            <p>Abaixo você pode visualizar a estrutura completa das etapas e subetapas criadas. As informações são exibidas hierarquicamente para facilitar o entendimento da organização do processo.</p>
+            <ul id="stepsTree" class="steps-tree"></ul>
+
+            <!-- Barra Flutuante -->
+            <div class="floating-bar">
+                <button id="scrollToTopButton" class="btn-floating">Voltar ao Topo</button>
+                <select id="scrollToStepSelector" class="btn-floating">
+                    <option value="">Selecione uma Etapa/Subetapa</option>
+                </select>
+            </div>                             
+        </form>
+    </div>
+
+    <!-- Footer (Rodapé) -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <img src="../assets/CONTROLADORIA_GERAL_DO_MUNICÍPIO_HORIZONTAL_FUNDO_ESCURO.png" alt="Logo da Controladoria Geral do Município">
+                </div>
+                <p>CGM – Controladoria Geral do Município</p>
+                <p>CPD – Controladoria Geral de Proteção de Dados Pessoais</p>
+                <p>Viaduto do Chá, 15, 10º andar – Centro Telefônico: (11) 3113–8234</p>
+            </div>
+            <div class="footer-contacts">
+                <p>Contatos</p>
+                <p>📞 156</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p style="color: white;">Prefeitura Municipal de São Paulo - Lei Geral de Proteção de Dados Pessoais</p>
+        </div>
+    </footer>
+
+    <script src="../js/mapeamento.js"></script>
+</body>
+</html>

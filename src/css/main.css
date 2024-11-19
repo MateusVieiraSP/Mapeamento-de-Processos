@@ -1,0 +1,183 @@
+/* Reset básico */
+body, h1, h2, p, div, a, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos globais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #def1fa;
+    color: #202124;
+    margin: 0;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #344955; /* Cor mais sofisticada */
+    padding: 15px 20px;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo da Navbar */
+.logo-container img {
+    max-height: 60px;
+    margin-right: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Botões da Navbar */
+.navbar-links .link-button {
+    background-color: #4A90E2;
+    color: white;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    display: inline-block;
+    margin: 0 8px;
+}
+
+.navbar-links .link-button:hover {
+    background-color: #357ABD;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Conteúdo Principal */
+.content {
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+header h1 {
+    font-size: 30px;
+    color: #333333;  /* Cinza-escuro em vez de preto puro */
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+header h2 {
+    font-size: 22px;
+    color: #333333;  /* Cinza-escuro em vez de preto puro */
+    margin-bottom: 30px;
+}
+
+.process-details, .form-instructions {
+    margin-bottom: 30px;
+}
+
+.process-details p, .form-instructions p {
+    margin-bottom: 12px;  /* Aumenta o espaçamento entre parágrafos */
+    line-height: 1.2;
+    color: #333333;  /* Cinza-escuro em vez de preto puro */
+    text-align: justify;
+    font-size: 18px;
+}
+
+.form-instructions h2 {
+    font-size: 22px;
+    color: #333333;  /* Cinza-escuro em vez de preto puro */
+    margin-bottom: 30px;
+}
+
+/* Botão do Formulário */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.botao {
+    background-color: #4A90E2;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+    margin-top: 15px;
+}
+
+.botao:hover {
+    background-color: #357ABD;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);  /* Sombra no hover suavizada */
+}
+
+/* Footer */
+.footer {
+    background-color: #344955;
+    color: white;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.footer-info, .footer-contacts {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo {
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    max-width: 150px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-logo img:hover {
+    transform: scale(1.05);
+}
+
+.footer-bottom {
+    border-top: 1px solid #4a4a4a;
+    padding-top: 10px;
+    font-size: 12px;
+    color: #ffffff;
+    text-align: center;
+    }
+
+.footer-content p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #dddddd;
+}
+
+/* Animação de Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
